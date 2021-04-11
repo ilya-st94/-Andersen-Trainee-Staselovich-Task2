@@ -1,0 +1,31 @@
+
+import java.util.Scanner;
+
+public class HelloVyacheslav {
+	private static String name = "Вячеслав", enteredName = "";
+	private static Scanner sc;
+
+	public static void main(String[] args) {
+		try {
+			while (true) {
+				sc = new Scanner(System.in);
+				System.out.println("Введите Имя");
+				enteredName = sc.nextLine();
+				if (enteredName.matches("[0-9]+")) {
+					System.out.println("Введено число");
+				}
+				if (enteredName.isEmpty()) {
+					System.out.println("Ничего не введено");
+				}
+				if (enteredName.equals(name)) {
+					System.out.println("Привет, Вячеслав");
+					break;
+				} else {
+					System.out.println("Нет такого имени");
+				}
+			}
+		} catch (Exception error) {
+			System.out.println(error);
+		}
+	}
+}
